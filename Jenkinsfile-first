@@ -1,0 +1,40 @@
+node{
+
+def mavenHome = tool name: "maven 3.9.5"
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+
+stage('CheckOutCode'){
+git branch: 'development', credentialsId: '8da20d17-6fe9-43dc-b9f5-dcf9b61c33b5', url: 'https://github.com/18Prashanth/maven-web-applications.git'
+}
+
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+/*
+stage('ExecuteSonarQubeREport'){
+sh "mvn sonar:sonar"
+}
+
+stage('UploAdartifactsToNexus'){
+sh "mvn deploy"
+}
+
+stage('DepoloyToTomcatcatServer'){
+sshagent(['13bca6c4-6e67-4e3d-8c3f-c343b065849a']) {
+sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline-scriptedway/target/maven-web-application.war ec2-user@3.12.155.21:/opt/apache-tomcat-9.0.82/webapps"
+}
+
+}
+stage('SendEmailNotification'){
+mail bcc: '', body: '''Build over..!
+
+Regards
+Prashanth software solutions
+9740744095''', cc: '18gowda2002@gmail.com', from: '', replyTo: '', subject: 'Build over..!', to: '18gowda2002@gmail.com'
+
+}
+/*
+}
