@@ -15,11 +15,11 @@ sh "${mavenHome}/bin/mvn clean package"
 
 
 stage('ExecuteSonarQubeREport'){
-sh "mvn sonar:sonar"
+sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 
 stage('UploAdartifactsToNexus'){
-sh "mvn deploy"
+sh "${mavenHome}/bin/mvn deploy"
 }
 
 stage('DepoloyToTomcatcatServer'){
