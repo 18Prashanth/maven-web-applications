@@ -13,7 +13,7 @@ stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
 
-
+/*
 stage('ExecuteSonarQubeREport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
 }
@@ -28,7 +28,7 @@ sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline-scripted
 }
 
 }
-/*stage('SendEmailNotification'){
+stage('SendEmailNotification'){
 mail bcc: '', body: '''Build over..!
 
 Regards
