@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Prashanth Technologies Pvt Ltd. Sri Satya Sai (Dist),Andhra Pradesh,India Poll SCM Build </h1>
-<h1 align="center"> New Batch will be start in September 3rd week  at 8.30 PM IST - Contact 9980923226/9740744095 or devopstrainingblr@gmail.com</h1> 
+<h1 align="center"> New Batch will be start in September 3rd week  at 8.30 PM IST - Contact 974852365/9740744095 or devopstrainingblr@gmail.com</h1> 
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
